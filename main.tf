@@ -17,6 +17,13 @@ provider "aws" {
   region = "us-east-1"
 }
 
+terraform {
+  backend "s3" {
+    bucket = "ekobon-terraform-state"
+    key    = "backend/terraform.tfstate"
+    region = "us-east-2"
+  }
+}
 
 ##### -------------------- FRONTEND -------------------- ##### 
 
